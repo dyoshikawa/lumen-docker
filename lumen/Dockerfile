@@ -18,8 +18,8 @@ RUN apk add zip unzip \
 
 RUN composer create-project --prefer-dist laravel/lumen /var/www/lumen-pre
 WORKDIR /var/www/lumen-pre
-RUN composer require predis/predis \
- && composer require barryvdh/laravel-debugbar --dev \
+RUN composer require illuminate/redis \
+ && composer require predis/predis \
  && composer install \
  && composer update
 
