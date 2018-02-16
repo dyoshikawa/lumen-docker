@@ -16,7 +16,7 @@ RUN apk add zip unzip \
  && curl -sS https://getcomposer.org/installer | php \
  && mv composer.phar /usr/local/bin/composer
 
-RUN composer require global hirak/prestissimo
+RUN composer global require hirak/prestissimo
 RUN composer create-project --prefer-dist laravel/lumen /var/www/lumen-pre
 WORKDIR /var/www/lumen-pre
 RUN composer require illuminate/redis \
